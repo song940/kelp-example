@@ -1,0 +1,29 @@
+{
+  "name": "kelp-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/kelp-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/song940/kelp-example/issues"
+  },
+  "homepage": "https://github.com/song940/kelp-example#readme",
+  "dependencies": {
+    "js-yaml": "^3.5.3",
+    "kelp": "^1.0.2",
+    "kelp-config": "^1.2.1",
+    "kelp-error": "^1.0.0",
+    "kelp-logger": "^1.0.0",
+    "kelp-send": "file:../Projects/kelp-send",
+    "kelp-static": "^1.0.0",
+    "minimist": "^1.2.0"
+  }
+}
