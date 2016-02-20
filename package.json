@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/.bin/nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +26,8 @@
     "kelp-send": "^1.0.0",
     "kelp-static": "^1.0.0",
     "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.0"
   }
 }
