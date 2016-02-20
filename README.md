@@ -1,19 +1,12 @@
-## kelp-example ![NPM version](https://img.shields.io/npm/v/kelp-example.svg?style=flat)
+## Kelp Example
 
-
-
-### Installation
-```bash
-$ npm install kelp-example
 ```
-
-### Example
-```js
-var kelpExample = require('kelp-example');
+~$ git clone https://github.com/song940/kelp-example my-app
+~$ rm -rf .git/
+~$ npm i
+~$ npm start
+~$ open http://localhost:3000/
 ```
-
-### API
-
 
 ### Contributing
 - Fork this Repo first
@@ -31,5 +24,3 @@ Copyright (c) 2016
 
 
 ---
-![docor]()
-built upon love by [docor](git+https://github.com/turingou/docor.git) v0.3.0
