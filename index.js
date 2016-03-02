@@ -1,5 +1,6 @@
 'use strict';
 const http   = require('http');
+const jade   = require('jade');
 const kelp   = require('kelp');
 const body   = require('kelp-body');
 const send   = require('kelp-send');
@@ -8,6 +9,7 @@ const route  = require('kelp-route');
 const serve  = require('kelp-static');
 const logger = require('kelp-logger');
 const config = require('kelp-config');
+const render = require('kelp-render');
 
 const app = kelp(config);
 
@@ -17,9 +19,15 @@ app.use(error);
 app.use(logger);
 app.use(serve(config.public));
 
-//
+app.use(render({
+  templates: 'views',
+  extension: 'jade' ,
+  compiler : jade.compile
+}));
+
+// route example
 app.use(route('/:name?', function(req, res){
-  res.send(req.params);
+  res.render('index', req.params);
 }));
 
 // default handler
