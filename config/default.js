@@ -1,4 +1,5 @@
 module.exports = {
   name: 'kelp-example',
-  public: './public'
+  public: './public',
+  port: 3000
 };
