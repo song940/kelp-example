@@ -2,6 +2,7 @@
 const http   = require('http');
 const jade   = require('jade');
 const kelp   = require('kelp');
+const auth   = require('kelp-auth');
 const body   = require('kelp-body');
 const send   = require('kelp-send');
 const error  = require('kelp-error');
@@ -26,7 +27,7 @@ app.use(render({
 }));
 
 // route example
-app.use(route('/:name?', function(req, res){
+app.use(auth("user", "pass", 'Hello!'), route('/:name?', function(req, res){
   res.render('index', req.params);
 }));
 
