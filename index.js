@@ -11,6 +11,7 @@ const serve  = require('kelp-static');
 const logger = require('kelp-logger');
 const config = require('kelp-config');
 const render = require('kelp-render');
+const cookie = require('kelp-cookie');
 
 const app = kelp(config);
 
@@ -18,6 +19,7 @@ app.use(body);
 app.use(send);
 app.use(error);
 app.use(logger);
+app.use(cookie());
 app.use(serve(config.public));
 
 app.use(render({
@@ -28,6 +30,8 @@ app.use(render({
 
 // route example
 app.use(auth("user", "pass", 'Hello!'), route('/:name?', function(req, res){
+  console.log(req.cookies);
+  res.cookie('test', 'test', { path: '/' });
   res.render('index', req.params);
 }));
 

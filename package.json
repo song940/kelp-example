@@ -23,6 +23,7 @@
     "kelp-auth": "^1.0.0",
     "kelp-body": "^1.0.1",
     "kelp-config": "^1.2.1",
+    "kelp-cookie": "^1.0.0",
     "kelp-error": "^1.0.0",
     "kelp-logger": "^1.0.0",
     "kelp-render": "^1.0.0",
