@@ -13,13 +13,13 @@ const config = require('kelp-config');
 const render = require('kelp-render');
 const cookie = require('kelp-cookie');
 
-const app = kelp(config);
+const app = kelp();
 
 app.use(body);
 app.use(send);
 app.use(error);
 app.use(logger);
-app.use(cookie());
+app.use(cookie);
 app.use(serve(config.public));
 
 app.use(render({
@@ -28,11 +28,10 @@ app.use(render({
   compiler : jade.compile
 }));
 
-// route example
-app.use(auth("user", "pass", 'Hello!'), route('/:name?', function(req, res){
-  console.log(req.cookies);
-  res.cookie('test', 'test', { path: '/' });
-  res.render('index', req.params);
+// route, auth and cookie example
+app.use(route('/admin', auth("user", "pass", 'Hello!'), function(req, res){
+  res.cookie('name', 'test', { path: '/' });
+  res.render('admin', req.cookies);
 }));
 
 // default handler
