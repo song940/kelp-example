@@ -30,6 +30,7 @@
     "kelp-render": "^1.0.0",
     "kelp-route": "*",
     "kelp-send": "^1.0.0",
+    "kelp-session": "^0.1.0",
     "kelp-static": "*",
     "minimist": "^1.2.0"
   },

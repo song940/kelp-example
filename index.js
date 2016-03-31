@@ -12,6 +12,7 @@ const config  = require('kelp-config');
 const render  = require('kelp-render');
 const cookie  = require('kelp-cookie');
 const captcha = require('kelp-captcha');
+const session = require('kelp-session');
 
 const app = kelp()
 
@@ -20,7 +21,13 @@ const app = kelp()
 .use(error)
 .use(logger)
 .use(cookie)
+.use(session())
 .use(serve(config.public))
+
+app.use(function(req, res, next){
+  console.log(req.sessionId);
+  next();
+});
 
 app.use(route('/captcha.jpg', captcha({
   width     : 250   ,
