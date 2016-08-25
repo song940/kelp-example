@@ -18,24 +18,23 @@
   },
   "homepage": "https://github.com/song940/kelp-example#readme",
   "dependencies": {
-    "js-yaml": "^3.5.3",
+    "js-yaml": "*",
     "kelp": "*",
     "kelp-auth": "*",
-    "kelp-body": "^1.0.1",
-    "kelp-captcha": "^1.1.0",
-    "kelp-config": "^1.2.1",
-    "kelp-cookie": "^1.0.3",
-    "kelp-error": "^1.0.0",
-    "kelp-logger": "^1.1.0",
-    "kelp-render": "^1.0.0",
+    "kelp-body": "*",
+    "kelp-config": "*",
+    "kelp-cookie": "*",
+    "kelp-error": "*",
+    "kelp-logger": "*",
+    "kelp-render": "*",
     "kelp-route": "*",
-    "kelp-send": "^1.0.0",
-    "kelp-session": "^0.1.0",
+    "kelp-send": "*",
+    "kelp-session": "*",
     "kelp-static": "*",
-    "minimist": "^1.2.0"
+    "minimist": "*"
   },
   "devDependencies": {
-    "nodemon": "^1.9.0"
+    "nodemon": "*"
   },
   "keywords": [
     "kelp",

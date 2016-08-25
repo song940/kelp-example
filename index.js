@@ -1,5 +1,7 @@
 'use strict';
 const http    = require('http');
+const jade    = require('jade');
+
 const kelp    = require('kelp');
 const auth    = require('kelp-auth');
 const body    = require('kelp-body');
@@ -11,7 +13,6 @@ const logger  = require('kelp-logger');
 const config  = require('kelp-config');
 const render  = require('kelp-render');
 const cookie  = require('kelp-cookie');
-const captcha = require('kelp-captcha');
 const session = require('kelp-session');
 
 const app = kelp()
@@ -23,20 +24,19 @@ const app = kelp()
 .use(cookie)
 .use(session())
 .use(serve(config.public))
+.use(render({
+  templates: 'views',
+  extension: 'jade' ,
+  compiler : function(content, filename){
+    return jade.compile(content, {
+      filename: filename
+    });
+  }
+}));
 
 app.use(function(req, res, next){
-  console.log(req.sessionId);
-  next();
+  res.render('home', { name: config.name });
 });
-
-app.use(route('/captcha.jpg', captcha({
-  width     : 250   ,
-  height    : 100   ,
-  length    : 6     ,
-  color     : '#fff',
-  fontSize  : 60    ,
-  background: 'rgb(20,30,200)'
-})));
 
 // default handler
 app.use(function(req, res){
